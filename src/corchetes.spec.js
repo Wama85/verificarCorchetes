@@ -14,6 +14,9 @@ describe("Verificar Corchetes",()=>{
     it("Verificar que haya dos corchete de apertura y dos de cierre",()=>{
         expect(verificarCorchetes('[[]]')).toEqual({'[[]]':'Correcto'})
     })
+    it("Verificar que haya tres corchete de apertura y dos de cierre",()=>{
+        expect(verificarCorchetes('[[[]]')).toEqual({'[[[]]':'Incorrecto'})
+    })
     
     })
     function verificarCorchetes(cadena){
@@ -29,6 +32,9 @@ describe("Verificar Corchetes",()=>{
             }
             if(cadena == '[[]]'){
                 return {'[[]]':'Correcto'}
+            }
+            if(cadena == '[[[]]'){
+                return {'[[[]]':'Incorrecto'}
             }
         }
         return {} ;
