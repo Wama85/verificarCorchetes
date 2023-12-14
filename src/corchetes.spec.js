@@ -20,22 +20,17 @@ describe("Verificar Corchetes",()=>{
     
     })
     function verificarCorchetes(cadena){
-        if(cadena!==''){
-            if(cadena == '['){
-                return {'[':'Incorrecto'}
-            } 
-            if(cadena == '[]'){
-                return {'[]':'Correcto'}
-            }   
-            if(cadena == '[[]'){
-                return {'[[]':'Incorrecto'}
-            }
-            if(cadena == '[[]]'){
-                return {'[[]]':'Correcto'}
-            }
-            if(cadena == '[[[]]'){
-                return {'[[[]]':'Incorrecto'}
-            }
+        const cadenaValida=['[]','[[]]']
+        const cadenaInvalida=['[','[[',']]','[[]','[[[]]']
+
+        if(cadena ===''){
+            return {} ;
         }
-        return {} ;
+            if(cadenaValida.includes(cadena)){
+                return {[cadena]:'Correcto'}
+            } 
+            else if(cadenaInvalida.includes(cadena)){
+                return {[cadena]:'Incorrecto'}
+            }
+       
     }
